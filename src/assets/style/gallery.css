@@ -1,0 +1,474 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  width: 100%;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  background: #ffffff;
+  color: #1e293b;
+}
+
+.pageWrapper {
+  width: 100%;
+  min-height: 100vh;
+  padding-bottom: 60px;
+}
+
+.heroSection {
+  width: 100%;
+  background-color: rgb(15 42 79);
+  min-height: 240px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
+  text-align: center;
+  padding-top: 60px;
+  opacity: 0;
+  transform: translateY(-30px);
+  transition: all 0.8s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+}
+
+.heroAnimated {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.heroInner {
+  text-align: center;
+}
+
+.heroTitle {
+  font-size: 22px;
+  font-weight: 700;
+  color: white;
+  margin-bottom: 8px;
+  letter-spacing: 0.5px;
+  animation: titleGlow 2s ease-in-out infinite;
+}
+
+.heroSubtitle {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.8);
+  font-weight: 400;
+  animation: subtitlePulse 2s ease-in-out infinite;
+}
+
+.filterBar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  padding: 40px 20px;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: 0 auto;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.6s ease-out;
+}
+
+.filterAnimated {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.filterItem {
+  padding: 10px 22px;
+  border-radius: 12px;
+  border: 1px solid #f1f5f9;
+  background: #ffffff;
+  color: #475569;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+  box-shadow: 0 1px 3px rgba(0,0,0,0.02);
+  outline: none;
+  opacity: 0;
+  transform: scale(0.9);
+  animation: filterItemPop 0.4s ease-out forwards;
+}
+
+@keyframes filterItemPop {
+  0% {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  60% {
+    transform: scale(1.05);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.filterItem:hover {
+  background-color: #f8fafc;
+  border-color: #e2e8f0;
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 6px 14px rgba(0,0,0,0.1);
+}
+
+.filterItemActive {
+  background: #0066ff;
+  color: white;
+  border-color: #0066ff;
+  box-shadow: 0 4px 10px rgba(0, 102, 255, 0.25);
+  transform: scale(1.02);
+}
+
+.filterItemActive:hover {
+  transform: scale(1.05) translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 102, 255, 0.35);
+}
+
+.contentWrap {
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.statusText {
+  text-align: center;
+  padding: 60px 24px;
+  font-size: 18px;
+  color: #64748b;
+  font-weight: 500;
+}
+
+.fadeInText {
+  animation: fadeInUp 0.5s ease-out;
+}
+
+.loaderWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 24px;
+}
+
+.loader {
+  width: 50px;
+  height: 50px;
+  border: 4px solid #f1f5f9;
+  border-top: 4px solid #0066ff;
+  border-radius: 50%;
+  animation: loaderSpin 1s linear infinite;
+  margin-bottom: 20px;
+}
+
+@keyframes loaderSpin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.gridLayout {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.gridItem {
+  width: 100%;
+  border-radius: 20px;
+  overflow: hidden;
+  background: #f1f5f9;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.04);
+  opacity: 0;
+  transform: translateY(30px) scale(0.95);
+  transition: all 0.5s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+  cursor: pointer;
+}
+
+.gridItemAnimated {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  animation: imageGlow 0.6s ease-out;
+}
+
+@keyframes imageGlow {
+  0% {
+    opacity: 0;
+    transform: scale(0.95);
+    filter: blur(5px);
+  }
+  50% {
+    transform: scale(1.02);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+    filter: blur(0);
+  }
+}
+
+.gridImage {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+  display: block;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+}
+
+.gridItem:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 20px 30px rgba(0,0,0,0.12);
+}
+
+.gridItem:hover .gridImage {
+  transform: scale(1.08);
+}
+
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.95);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  animation: modalFadeIn 0.3s ease-out;
+  backdrop-filter: blur(10px);
+}
+
+@keyframes modalFadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.modalContent {
+  position: relative;
+  max-width: 90vw;
+  max-height: 90vh;
+  animation: modalZoomIn 0.3s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+}
+
+@keyframes modalZoomIn {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.modalImage {
+  max-width: 90vw;
+  max-height: 85vh;
+  object-fit: contain;
+  border-radius: 16px;
+  box-shadow: 0 25px 50px rgba(0,0,0,0.3);
+}
+
+.modalCaption {
+  position: absolute;
+  bottom: -40px;
+  left: 0;
+  right: 0;
+  text-align: center;
+  color: white;
+  font-size: 16px;
+  font-weight: 500;
+  padding: 8px;
+  background: rgba(0,0,0,0.6);
+  border-radius: 10px;
+  margin-top: 12px;
+}
+
+.modalClose {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  font-size: 40px;
+  font-weight: bold;
+  color: white;
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  z-index: 10000;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modalClose:hover {
+  transform: scale(1.2);
+  color: #ff4444;
+}
+
+.modalPrev, .modalNext {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 50px;
+  font-weight: bold;
+  color: white;
+  background: rgba(0,0,0,0.5);
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  z-index: 10000;
+  width: 60px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+}
+
+.modalPrev {
+  left: 20px;
+}
+
+.modalNext {
+  right: 20px;
+}
+
+.modalPrev:hover, .modalNext:hover {
+  background: rgba(0,0,0,0.8);
+  transform: translateY(-50%) scale(1.1);
+}
+
+@keyframes titleGlow {
+  0%, 100% {
+    text-shadow: 0 0 0px rgba(255,255,255,0);
+  }
+  50% {
+    text-shadow: 0 0 15px rgba(255,255,255,0.5);
+  }
+}
+
+@keyframes subtitlePulse {
+  0%, 100% {
+    opacity: 0.7;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 1200px) {
+  .gridImage {
+    height: 350px;
+  }
+}
+
+@media (max-width: 992px) {
+  .gridLayout {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+  .heroTitle {
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .heroSection {
+    min-height: 200px;
+  }
+  .filterBar {
+    padding: 30px 15px;
+    gap: 6px;
+  }
+  .filterItem {
+    padding: 8px 18px;
+    font-size: 13px;
+  }
+  .gridImage {
+    height: 300px;
+  }
+  .modalPrev, .modalNext {
+    width: 40px;
+    height: 60px;
+    font-size: 35px;
+  }
+  .modalClose {
+    top: 10px;
+    right: 15px;
+    font-size: 35px;
+  }
+  .modalImage {
+    max-width: 95vw;
+    max-height: 80vh;
+  }
+}
+
+@media (max-width: 576px) {
+  .gridLayout {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  .heroTitle {
+    font-size: 18px;
+  }
+  .contentWrap {
+    padding: 0 16px;
+  }
+  .gridImage {
+    height: 280px;
+  }
+  .filterItem {
+    flex-grow: 1;
+    text-align: center;
+  }
+  .modalPrev, .modalNext {
+    width: 35px;
+    height: 50px;
+    font-size: 30px;
+  }
+  .modalPrev {
+    left: 5px;
+  }
+  .modalNext {
+    right: 5px;
+  }
+}
+
+@media (max-width: 380px) {
+  .heroTitle {
+    font-size: 16px;
+  }
+  .filterItem {
+    padding: 8px 12px;
+    font-size: 12px;
+  }
+}

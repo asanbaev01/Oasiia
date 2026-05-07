@@ -1,0 +1,84 @@
+.gotovy-section {
+  background: #0a2540;
+  padding: 120px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+  box-sizing: border-box;
+  position: relative;
+}
+
+.gotovy-container {
+  max-width: 900px;
+  width: 100%;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.8s ease-out;
+}
+
+.container-animated {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.gotovy-title {
+  font-size: 64px;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 24px;
+  line-height: 1.2;
+}
+
+.gotovy-subtitle {
+  font-size: 20px;
+  color: #94a3b8;
+  margin-bottom: 40px;
+  font-weight: 400;
+}
+
+.gotovy-btn {
+  background: #0061ff;
+  color: #fff;
+  padding: 16px 48px;
+  border-radius: 12px;
+  font-size: 18px;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 97, 255, 0.3);
+}
+
+.gotovy-btn:hover {
+  background: #0052d9;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0, 97, 255, 0.4);
+}
+
+.gotovy-btn:active {
+  transform: translateY(0);
+}
+
+@media (max-width: 768px) {
+  .gotovy-section {
+    padding: 80px 20px;
+  }
+  .gotovy-title {
+    font-size: 42px;
+  }
+  .gotovy-subtitle {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 480px) {
+  .gotovy-title {
+    font-size: 32px;
+  }
+  .gotovy-btn {
+    width: 100%;
+    padding: 16px 20px;
+  }
+}

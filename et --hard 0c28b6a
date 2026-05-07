@@ -1,0 +1,37 @@
+[33m01b5f38[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mfooter[m[33m, [m[1;31morigin/master[m[33m)[m HEAD@{0}: pull origin master: Fast-forward
+[33m6d874a6[m[33m ([m[1;31morigin/footer[m[33m)[m HEAD@{1}: reset: moving to HEAD
+[33m6d874a6[m[33m ([m[1;31morigin/footer[m[33m)[m HEAD@{2}: commit: tours function
+[33ma9041f7[m HEAD@{3}: pull origin master: Fast-forward
+[33m0a2c3c2[m[33m ([m[1;31morigin/glav[m[33m)[m HEAD@{4}: pull origin glav: Fast-forward
+[33mea8fe23[m HEAD@{5}: commit: faq add api
+[33m5f8eb08[m HEAD@{6}: commit: en ky ru js
+[33mefdab81[m HEAD@{7}: pull origin glav: Fast-forward
+[33m8214c1c[m HEAD@{8}: commit: add hooks api
+[33mcdd8ea8[m HEAD@{9}: commit: tour.css, tour-time
+[33m5cbc7b4[m HEAD@{10}: commit: tourCard, tour.css
+[33ma7c7942[m HEAD@{11}: commit: new commit
+[33m4555fad[m HEAD@{12}: commit: sdbnkjl;
+[33m402c97b[m HEAD@{13}: commit: add toursDetails media
+[33mc646ca4[m HEAD@{14}: pull origin glav: Merge made by the 'ort' strategy.
+[33m0dfb979[m HEAD@{15}: commit: tours,toursDetails, media
+[33m0c28b6a[m HEAD@{16}: pull origin nod: Merge made by the 'ort' strategy.
+[33m4e7daba[m HEAD@{17}: commit: faq, contact media
+[33mdafbbdc[m HEAD@{18}: commit: tour and tour details
+[33m808c7c9[m HEAD@{19}: pull origin nod: Merge made by the 'ort' strategy.
+[33m0d87843[m HEAD@{20}: pull origin glav: Merge made by the 'ort' strategy.
+[33m6dbb934[m HEAD@{21}: commit: add max-pice
+[33m20b5b39[m HEAD@{22}: pull origin glav: Merge made by the 'ort' strategy.
+[33m9b5fab3[m HEAD@{23}: pull origin footer: Merge made by the 'ort' strategy.
+[33me950fe1[m HEAD@{24}: commit (merge): start tour
+[33medd314d[m HEAD@{25}: commit: add contact, faq
+[33m57d9d6e[m HEAD@{26}: commit: add footer
+[33m8158c8d[m HEAD@{27}: pull origin glav: Merge made by the 'ort' strategy.
+[33m2eb8f16[m HEAD@{28}: pull origin glav: Merge made by the 'ort' strategy.
+[33m91d35ce[m HEAD@{29}: commit: foot start
+[33m8436e81[m[33m ([m[1;32mmaster[m[33m)[m HEAD@{30}: checkout: moving from master to footer
+[33m8436e81[m[33m ([m[1;32mmaster[m[33m)[m HEAD@{31}: checkout: moving from footer to master
+[33m8436e81[m[33m ([m[1;32mmaster[m[33m)[m HEAD@{32}: checkout: moving from master to footer
+[33m8436e81[m[33m ([m[1;32mmaster[m[33m)[m HEAD@{33}: commit: add header
+[33m63cf89f[m HEAD@{34}: Branch: renamed refs/heads/master to refs/heads/master
+[33m63cf89f[m HEAD@{36}: commit: first commit
+[33ma9408e6[m HEAD@{37}: commit (initial): Initialize project using Create React App

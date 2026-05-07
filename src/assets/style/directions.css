@@ -1,0 +1,348 @@
+.WhereText__background {
+    background: linear-gradient(160deg, rgb(10, 22, 40) 0%, rgb(0, 64, 204) 100%);
+    opacity: 0;
+    transform: translateY(-30px);
+    animation: heroFadeIn 0.8s ease-out forwards;
+}
+
+@keyframes heroFadeIn {
+    0% { opacity: 0; transform: translateY(-30px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+.WhereText__text {
+    color: rgb(255, 255, 255);
+    text-align: center;
+    padding: 110px 0px;
+    opacity: 0;
+    transform: scale(0.95);
+}
+
+.text-animated {
+    animation: textZoom 0.7s ease-out forwards;
+}
+
+@keyframes textZoom {
+    0% { opacity: 0; transform: scale(0.9); }
+    50% { transform: scale(1.02); }
+    100% { opacity: 1; transform: scale(1); }
+}
+
+.WhereText__text p:first-child {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 7px;
+    opacity: 0;
+    transform: translateX(-30px);
+    animation: slideRight 0.5s ease-out 0.2s forwards;
+}
+
+@keyframes slideRight {
+    0% { opacity: 0; transform: translateX(-40px); }
+    100% { opacity: 1; transform: translateX(0); }
+}
+
+.WhereText__text h1 {
+    font-size: 19px;
+    margin-bottom: 7px;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeUp 0.5s ease-out 0.35s forwards;
+}
+
+@keyframes fadeUp {
+    0% { opacity: 0; transform: translateY(30px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+.WhereText__text p:last-child {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 7px;
+    opacity: 0;
+    transform: translateX(30px);
+    animation: slideLeft 0.5s ease-out 0.5s forwards;
+}
+
+@keyframes slideLeft {
+    0% { opacity: 0; transform: translateX(40px); }
+    100% { opacity: 1; transform: translateX(0); }
+}
+
+.directionsBlocks {
+    margin: 100px 0px 140px 0px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.directionsBlocks-loader {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 100px 0;
+}
+
+.directionsBlocks-loader .loader {
+    width: 50px;
+    height: 50px;
+    border: 4px solid #e5e7eb;
+    border-top: 4px solid #0066ff;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin-bottom: 20px;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.directionBlock {
+    max-width: 100%;
+    width: 100%;
+    opacity: 0;
+    transform: translateY(40px);
+    animation: blockFadeUp 0.6s ease-out forwards;
+}
+
+@keyframes blockFadeUp {
+    0% { opacity: 0; transform: translateY(50px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+.directionBlock:hover {
+    transform: translateY(-8px);
+    transition: transform 0.4s ease;
+}
+
+.directionBlock__img2 {
+    color: white;
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    border-radius: 12px;
+}
+
+.directionBlock__img2 img {
+    width: 100%;
+    height: 250px;
+    transition: transform 0.5s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+    border-radius: 12px;
+}
+
+.directionBlock:hover .directionBlock__img2 img {
+    transform: scale(1.1);
+}
+
+.directionBlock__img2 h2 {
+    position: absolute;
+    bottom: 40px;
+    left: 30px;
+    opacity: 0;
+    transform: translateX(-20px);
+    animation: fadeInLeft 0.5s ease-out 0.2s forwards;
+}
+
+@keyframes fadeInLeft {
+    0% { opacity: 0; transform: translateX(-30px); }
+    100% { opacity: 1; transform: translateX(0); }
+}
+
+.directionBlock__img2 h3 {
+    position: absolute;
+    bottom: 15px;
+    left: 30px;
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.9);
+    opacity: 0;
+    transform: translateX(-20px);
+    animation: fadeInLeft 0.5s ease-out 0.35s forwards;
+}
+
+.directionBlock p {
+    margin-left: 30px;
+    margin-top: 20px;
+    color: rgb(107, 114, 128);
+    line-height: 25px;
+    letter-spacing: 2px;
+    transition: color 0.3s ease;
+}
+
+.directionBlock:hover p {
+    color: rgb(55, 65, 81);
+}
+
+.directionBlock a {
+    text-decoration: none;
+    display: inline-block;
+}
+
+.directionBlock button {
+    position: relative;
+    margin-left: 30px;
+    margin-top: 25px;
+    border: none;
+    outline: none;
+    background: transparent;
+    color: rgb(0, 87, 255);
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    padding: 8px 25px 8px 0;
+}
+
+.directionBlock button::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: rgb(0, 87, 255);
+    transition: width 0.3s ease;
+}
+
+.directionBlock button:hover::before {
+    width: calc(100% - 25px);
+}
+
+.directionBlock button:hover {
+    transform: translateX(5px);
+}
+
+.directionBlock__button__icon {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    transition: transform 0.3s ease;
+}
+
+.directionBlock button:hover .directionBlock__button__icon {
+    transform: translateY(-50%) translateX(5px);
+}
+
+@media (max-width: 1200px) {
+    .directionsBlocks {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 25px;
+        padding: 0 20px;
+    }
+}
+
+@media (max-width: 900px) {
+    .directionsBlocks {
+        grid-template-columns: repeat(1, 1fr);
+        gap: 30px;
+    }
+    .directionBlock {
+        max-width: 500px;
+        margin: 0 auto;
+    }
+    .WhereText__text {
+        padding: 80px 20px;
+    }
+    .WhereText__text p:first-child,
+    .WhereText__text p:last-child {
+        font-size: 18px;
+    }
+    .WhereText__text h1 {
+        font-size: 17px;
+    }
+}
+
+@media (max-width: 768px) {
+    .directionsBlocks {
+        margin: 60px 0px 80px 0px;
+        gap: 25px;
+    }
+    .WhereText__text {
+        padding: 70px 20px;
+    }
+    .WhereText__text p:first-child,
+    .WhereText__text p:last-child {
+        font-size: 16px;
+    }
+    .WhereText__text h1 {
+        font-size: 15px;
+    }
+    .directionBlock__img2 img {
+        height: 220px;
+    }
+    .directionBlock p {
+        margin-left: 20px;
+        font-size: 14px;
+        letter-spacing: 1px;
+    }
+    .directionBlock button {
+        margin-left: 20px;
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 576px) {
+    .directionsBlocks {
+        margin: 40px 0px 60px 0px;
+        gap: 20px;
+        padding: 0 15px;
+    }
+    .WhereText__text {
+        padding: 50px 15px;
+    }
+    .WhereText__text p:first-child,
+    .WhereText__text p:last-child {
+        font-size: 14px;
+    }
+    .WhereText__text h1 {
+        font-size: 13px;
+    }
+    .directionBlock__img2 img {
+        height: 200px;
+    }
+    .directionBlock__img2 h2 {
+        bottom: 35px;
+        left: 20px;
+        font-size: 18px;
+    }
+    .directionBlock__img2 h3 {
+        bottom: 12px;
+        left: 20px;
+        font-size: 12px;
+    }
+    .directionBlock p {
+        margin-left: 15px;
+        font-size: 13px;
+        line-height: 22px;
+    }
+    .directionBlock button {
+        margin-left: 15px;
+        font-size: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .directionBlock__img2 img {
+        height: 180px;
+    }
+    .directionBlock__img2 h2 {
+        bottom: 30px;
+        left: 15px;
+        font-size: 16px;
+    }
+    .directionBlock__img2 h3 {
+        bottom: 10px;
+        left: 15px;
+        font-size: 11px;
+    }
+    .directionBlock p {
+        margin-left: 12px;
+        font-size: 12px;
+    }
+    .directionBlock button {
+        margin-left: 12px;
+        font-size: 14px;
+    }
+}

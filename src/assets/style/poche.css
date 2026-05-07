@@ -1,0 +1,287 @@
+.poche-section {
+  background: linear-gradient(180deg, #002349 0%, #0047AB 100%);
+  padding: 100px 20px;
+  font-family: 'Inter', sans-serif;
+  color: white;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.poche-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at 20% 50%, rgba(255,255,255,0.05) 0%, transparent 50%);
+  animation: pulseBg 4s ease-in-out infinite;
+}
+
+@keyframes pulseBg {
+  0%, 100% {
+    opacity: 0.5;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+.poche-header {
+  margin-bottom: 60px;
+  opacity: 0;
+  transform: translateY(-30px);
+  transition: all 0.7s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+}
+
+.header-animated {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.poche-badge {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 6px 16px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  color: #c7d2fe;
+  text-transform: uppercase;
+  display: inline-block;
+  opacity: 0;
+  transform: scale(0.8);
+  animation: badgeGlow 0.5s cubic-bezier(0.2, 0.9, 0.4, 1.1) 0.2s forwards;
+}
+
+@keyframes badgeGlow {
+  0% {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+  60% {
+    transform: scale(1.1);
+    box-shadow: 0 0 20px rgba(59,130,246,0.5);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.poche-title {
+  font-size: 48px;
+  font-weight: 800;
+  margin: 24px 0 12px;
+  opacity: 0;
+  transform: translateX(-30px);
+  animation: titleSlideRight 0.6s ease-out 0.3s forwards;
+}
+
+@keyframes titleSlideRight {
+  0% {
+    opacity: 0;
+    transform: translateX(-40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.poche-subtitle {
+  font-size: 18px;
+  opacity: 0.8;
+  font-weight: 400;
+  opacity: 0;
+  transform: translateX(30px);
+  animation: subtitleSlideLeft 0.6s ease-out 0.4s forwards;
+}
+
+@keyframes subtitleSlideLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(40px);
+  }
+  100% {
+    opacity: 0.8;
+    transform: translateX(0);
+  }
+}
+
+.poche-grid {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  flex-wrap: wrap;
+}
+
+.poche-card {
+  background: rgba(255, 255, 255, 0.04);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 24px;
+  padding: 40px 30px;
+  flex: 1;
+  min-width: 250px;
+  max-width: 280px;
+  transition: all 0.4s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  opacity: 0;
+  transform: translateY(40px) scale(0.95);
+}
+
+.card-animated {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  animation: cardFloat 0.6s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+}
+
+@keyframes cardFloat {
+  0% {
+    opacity: 0;
+    transform: translateY(50px) scale(0.9);
+  }
+  60% {
+    transform: translateY(-8px) scale(1.02);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.poche-card:hover {
+  transform: translateY(-12px) scale(1.03);
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+}
+
+.poche-icon-wrapper {
+  margin-bottom: 25px;
+  font-size: 40px;
+  color: #3b82f6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.4s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+}
+
+.poche-card:hover .poche-icon-wrapper {
+  transform: scale(1.2) rotate(10deg);
+  color: #60a5fa;
+}
+
+.poche-card-title {
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 15px;
+  transition: all 0.3s ease;
+}
+
+.poche-card:hover .poche-card-title {
+  transform: translateY(-3px);
+  letter-spacing: 0.5px;
+}
+
+.poche-card-desc {
+  font-size: 15px;
+  line-height: 1.6;
+  opacity: 0.7;
+  transition: all 0.3s ease;
+}
+
+.poche-card:hover .poche-card-desc {
+  opacity: 0.9;
+  transform: translateY(2px);
+}
+
+@keyframes iconSpin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@media (max-width: 1200px) {
+  .poche-grid {
+    padding: 0 20px;
+    gap: 15px;
+  }
+  .poche-title {
+    font-size: 42px;
+  }
+}
+
+@media (max-width: 992px) {
+  .poche-section {
+    padding: 80px 20px;
+  }
+  .poche-card {
+    min-width: 40%;
+    max-width: 45%;
+  }
+}
+
+@media (max-width: 768px) {
+  .poche-title {
+    font-size: 32px;
+  }
+  .poche-subtitle {
+    font-size: 16px;
+  }
+  .poche-grid {
+    flex-direction: column;
+    align-items: center;
+  }
+  .poche-card {
+    max-width: 100%;
+    width: 100%;
+    padding: 30px 20px;
+  }
+  @keyframes cardFloat {
+    0% {
+      opacity: 0;
+      transform: translateY(30px) scale(0.95);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .poche-section {
+    padding: 60px 15px;
+  }
+  .poche-header {
+    margin-bottom: 40px;
+  }
+  .poche-title {
+    font-size: 28px;
+    margin: 16px 0 8px;
+  }
+  .poche-icon-wrapper {
+    font-size: 32px;
+    margin-bottom: 20px;
+  }
+  .poche-card-title {
+    font-size: 18px;
+  }
+  .poche-card-desc {
+    font-size: 14px;
+  }
+  .poche-card {
+    padding: 25px 18px;
+  }
+}
