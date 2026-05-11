@@ -130,20 +130,3 @@ export default function LutTur() {
   )
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
